@@ -1,0 +1,25 @@
+<div class="product-container">
+    <!-- Imagen del producto -->
+    <div class="product-image-container">
+        <img class="product-image" src="{{ productSelected.img }}" alt="Imagen del producto">
+    </div>
+
+    <!-- Detalles del producto -->
+    <div class="product-details">
+        <button (click)="goToHome()" class="back-button">Regresar</button>
+        <p class="product-id">ID: {{ productSelected.id }}</p>
+        <h2 class="product-name">{{ productSelected.name }}</h2>
+        <p class="product-price">Precio: ${{ totalPrice.toFixed(2) }}</p>
+
+        <label for="quantity">Cantidad:</label>
+        <input 
+            id="quantity" 
+            type="number" 
+            class="quantity-input" 
+            min="1" 
+            [value]="quantity" 
+            (input)="updateQuantity($event)"
+        >
+    </div>
+    <button (click)="addToCart()">Agregar al Carrito</button>
+</div>

@@ -1,0 +1,14 @@
+<a routerLink="/cart">Ver Carrito</a>
+<section>
+    <div *ngFor="let item of currentProducts">
+      <app-product-item [item]="item"></app-product-item>
+    </div>
+  </section>
+  
+  <!-- Barra de navegación para cambiar de ventana -->
+  <div class="pagination">
+    <button (click)="changePage('prev')" [disabled]="currentPage === 1">Anterior</button>
+    <span>Página {{ currentPage }} de {{ totalPages }}</span>
+    <button (click)="changePage('next')" [disabled]="currentPage === totalPages">Siguiente</button>
+  </div>
+  
