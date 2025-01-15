@@ -1,14 +1,16 @@
-<a routerLink="/cart">Ver Carrito</a>
-<section>
-    <div *ngFor="let item of currentProducts">
-      <app-product-item [item]="item"></app-product-item>
-    </div>
-  </section>
+<ion-button routerLink="/cart">Ver carrito</ion-button>
+
+<ion-card>
+  <ion-card-header *ngFor="let item of currentProducts">
+    <app-product-item [item]="item"></app-product-item>
+  </ion-card-header>
+</ion-card>
   
   <!-- Barra de navegación para cambiar de ventana -->
-  <div class="pagination">
-    <button (click)="changePage('prev')" [disabled]="currentPage === 1">Anterior</button>
-    <span>Página {{ currentPage }} de {{ totalPages }}</span>
-    <button (click)="changePage('next')" [disabled]="currentPage === totalPages">Siguiente</button>
-  </div>
+  <ion-content class="pagination">
+    <ion-button (click)="changePage('prev')" [disabled]="currentPage === 1">Anterior</ion-button>
+    <ion-label>Páginaa {{ currentPage }} de {{ totalPages }}</ion-label>
+    
+    <ion-button (click)="changePage('next')" [disabled]="currentPage === totalPages">Siguiente</ion-button>
+  </ion-content>
   

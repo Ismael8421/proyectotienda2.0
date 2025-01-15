@@ -1,18 +1,18 @@
-<div class="product-container">
+<ion-content class="product-container">
     <!-- Imagen del producto -->
-    <div class="product-image-container">
+    <ion-content class="product-image-container">
         <img class="product-image" src="{{ productSelected.img }}" alt="Imagen del producto">
-    </div>
+    </ion-content>
 
     <!-- Detalles del producto -->
-    <div class="product-details">
-        <button (click)="goToHome()" class="back-button">Regresar</button>
+    <ion-content class="product-details">
+        <ion-button(click)="goToHome()" class="back-button">Regresar</ion-button>
         <p class="product-id">ID: {{ productSelected.id }}</p>
         <h2 class="product-name">{{ productSelected.name }}</h2>
         <p class="product-price">Precio: ${{ totalPrice.toFixed(2) }}</p>
 
-        <label for="quantity">Cantidad:</label>
-        <input 
+        <ion-label for="quantity">Cantidad:</ion-label>
+        <ion-input 
             id="quantity" 
             type="number" 
             class="quantity-input" 
@@ -20,6 +20,6 @@
             [value]="quantity" 
             (input)="updateQuantity($event)"
         >
-    </div>
-    <button (click)="addToCart()">Agregar al Carrito</button>
-</div>
+    </ion-content>
+    <ion-button (click)="addToCart()">Agregar al Carrito</ion-button>
+</ion-content>

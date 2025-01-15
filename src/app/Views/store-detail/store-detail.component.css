@@ -1,10 +1,18 @@
+/* Fondo de pantalla completo */
+body {
+    margin: 0; /* Elimina márgenes predeterminados del body */
+    height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+    background: linear-gradient(135deg, #f0f8ff, #e0f7fa); /* Fondo de gradiente */
+    font-family: Arial, Helvetica, sans-serif; /* Fuente base */
+}
+
 /* Estilo general del contenedor del producto */
 .product-container {
     display: flex; /* Flexbox para diseño horizontal */
     flex-direction: row; /* Coloca elementos en fila */
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(135deg, #f0f8ff, #e0f7fa);
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
@@ -126,6 +134,7 @@
         font-size: 20px;
     }
 }
+
 /* Botón "Agregar al Carrito" */
 button {
     display: block;
@@ -140,24 +149,23 @@ button {
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
     transition: background-color 0.3s ease, transform 0.2s ease;
-  }
+}
   
-  button:hover {
+button:hover {
     background-color: #218838; /* Verde más oscuro */
     transform: translateY(-2px); /* Efecto de elevación */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
-  }
+}
   
-  button:active {
+button:active {
     background-color: #1e7e34; /* Verde aún más oscuro al hacer clic */
     transform: translateY(1px); /* Simulación de clic */
-  }
+}
   
-  /* Diseño responsivo para pantallas pequeñas */
-  @media (max-width: 768px) {
+/* Diseño responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
     button {
-      font-size: 14px;
-      padding: 10px 16px;
+        font-size: 14px;
+        padding: 10px 16px;
     }
-  }
-  
+}

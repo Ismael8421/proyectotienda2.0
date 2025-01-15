@@ -3,12 +3,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../Services/product.service';
 import { Product } from '../../Models/product.mode';
 import { CartService } from '../../Services/cart.service';
+import { IonicModule } from '@ionic/angular';
 
 
 
 @Component({
   selector: 'app-store-detail',
-  imports: [],
+  imports: [IonicModule],
   templateUrl: './store-detail.component.html',
   styleUrl: './store-detail.component.css'
 })

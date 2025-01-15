@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-not-found',
-  imports: [],
+  imports: [IonicModule],
   templateUrl: './not-found.component.html',
   styleUrl: './not-found.component.css'
 })

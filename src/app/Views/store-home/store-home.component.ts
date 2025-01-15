@@ -4,14 +4,16 @@ import { ProductItemComponent } from '../../Components/product-item/product-item
 import { NgFor } from '@angular/common';
 import { ProductService } from '../../Services/product.service';
 import { RouterLink } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-store-home',
-  imports: [NgFor, ProductItemComponent, RouterLink ],
+  imports: [NgFor, ProductItemComponent, RouterLink, IonicModule ],
   templateUrl: './store-home.component.html',
   styleUrls: ['./store-home.component.css']
 })
 export class StoreHomeComponent {
+  
   productService = inject(ProductService);
   listaProductos: Product[] = this.productService.getProducts();
   
