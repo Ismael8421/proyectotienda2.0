@@ -1,16 +1,36 @@
-<ion-button routerLink="/cart">Ver carrito</ion-button>
+<ion-content>
+  <!-- Botón para ver el carrito -->
+  <ion-button expand="block" color="primary" routerLink="/cart">
+    Ver carrito
+  </ion-button>
 
-<ion-card>
-  <ion-card-header *ngFor="let item of currentProducts">
-    <app-product-item [item]="item"></app-product-item>
-  </ion-card-header>
-</ion-card>
-  
-  <!-- Barra de navegación para cambiar de ventana -->
-  <ion-content class="pagination">
-    <ion-button (click)="changePage('prev')" [disabled]="currentPage === 1">Anterior</ion-button>
-    <ion-label>Páginaa {{ currentPage }} de {{ totalPages }}</ion-label>
-    
-    <ion-button (click)="changePage('next')" [disabled]="currentPage === totalPages">Siguiente</ion-button>
-  </ion-content>
-  
+  <!-- Lista de productos -->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="6" size-lg="4" *ngFor="let item of currentProducts">
+        <ion-card>
+          <app-product-item [item]="item"></app-product-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Barra de navegación para la paginación -->
+  <ion-footer class="pagination-footer">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="changePage('prev')" [disabled]="currentPage === 1">
+          Anterior
+        </ion-button>
+      </ion-buttons>
+      <ion-title class="ion-text-center">
+        Página {{ currentPage }} de {{ totalPages }}
+      </ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="changePage('next')" [disabled]="currentPage === totalPages">
+          Siguiente
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

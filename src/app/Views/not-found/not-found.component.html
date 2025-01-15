@@ -1,6 +1,13 @@
-<ion-content>
-    <section class="error-404">
-        <h1>404: No se encontró el ID: {{ id }}</h1>
-    </section>
-    <ion-button (click)="goToHome()">Regresar</ion-button>
-</ion-content>
+<ion-content class="ion-padding">
+    <ion-grid class="error-404-grid">
+      <ion-row class="ion-justify-content-center ion-align-items-center" style="height: 100vh;">
+        <ion-col size="12" class="ion-text-center">
+          <h1 class="error-title">404: No se encontró el ID: {{ id }}</h1>
+          <ion-button expand="block" color="primary" (click)="goToHome()">
+            Regresar
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  

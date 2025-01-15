@@ -1,25 +1,43 @@
 <ion-content class="product-container">
     <!-- Imagen del producto -->
-    <ion-content class="product-image-container">
-        <img class="product-image" src="{{ productSelected.img }}" alt="Imagen del producto">
-    </ion-content>
-
+    <div class="product-image-container ion-text-center">
+      <ion-img class="product-image" [src]="productSelected.img" alt="Imagen del producto"></ion-img>
+    </div>
+  
     <!-- Detalles del producto -->
-    <ion-content class="product-details">
-        <ion-button(click)="goToHome()" class="back-button">Regresar</ion-button>
-        <p class="product-id">ID: {{ productSelected.id }}</p>
-        <h2 class="product-name">{{ productSelected.name }}</h2>
-        <p class="product-price">Precio: ${{ totalPrice.toFixed(2) }}</p>
-
-        <ion-label for="quantity">Cantidad:</ion-label>
-        <ion-input 
+    <ion-grid class="product-details-grid ion-padding">
+      <ion-row>
+        <ion-col size="12" class="ion-text-center">
+          <h2 class="product-name">{{ productSelected.name }}</h2>
+          <p class="product-id">ID: {{ productSelected.id }}</p>
+          <p class="product-price">Precio: ${{ totalPrice.toFixed(2) }}</p>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col size="12" class="ion-text-center">
+          <ion-label for="quantity">Cantidad:</ion-label>
+          <ion-input 
             id="quantity" 
             type="number" 
-            class="quantity-input" 
             min="1" 
             [value]="quantity" 
-            (input)="updateQuantity($event)"
-        >
-    </ion-content>
-    <ion-button (click)="addToCart()">Agregar al Carrito</ion-button>
-</ion-content>
+            (ionChange)="updateQuantity($event)"
+            class="quantity-input"
+          ></ion-input>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" class="ion-text-center">
+          <ion-button expand="block" color="primary" (click)="addToCart()">
+            Agregar al Carrito
+          </ion-button>
+          <ion-button expand="block" color="medium" (click)="goToHome()">
+            Regresar
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  
