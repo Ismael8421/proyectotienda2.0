@@ -12,7 +12,10 @@ export class CartService {
   }
 
   removeFromCart(productId: number): void {
-    this.cart = this.cart.filter(product => product.id !== productId);
+    const index = this.cart.findIndex(product => product.id === productId);
+    if (index !== -1) {
+      this.cart.splice(index, 1);
+    }
   }
 
   getCartItems(): Product[] {

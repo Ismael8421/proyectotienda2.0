@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-cart',
-  imports: [ NgFor, IonicModule ],
+  imports: [NgFor, IonicModule ],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'
 })

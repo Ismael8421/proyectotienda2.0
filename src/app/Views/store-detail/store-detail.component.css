@@ -18,12 +18,8 @@ body {
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
     margin: 20px auto;
     max-width: 900px; /* Ancho máximo */
-    transition: transform 0.3s ease-in-out;
 }
 
-.product-container:hover {
-    transform: scale(1.03);
-}
 
 /* Estilo del botón de regresar */
 .back-button {
